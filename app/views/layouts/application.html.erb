@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  
+    <meta charset="utf-8">
+    <title>Spacefliks</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+	<%= stylesheet_link_tag    "application" %>
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+    </style>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="/">Spacefliks</a>
+          <ul class="nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/home/about">About</a></li>
+            <li><a href="/home/contact">Contact</a></li>
+		  </ul>
+		  <p class="pull-right">
+			<% if user_signed_in? %>
+			
+			 Logged in as <%= link_to(@currentuser = current_user.email, edit_user_registration_path) %>
+			<% else %>
+			  <a href="#"> <%= link_to('Sign up', new_user_registration_path) %></a>
+			<% end %>
+		  </p>
+       </div>
+      </div>
+    </div>
+
+	  <div class="container-fluid">
+	  
+      <div class="sidebar">
+	  
+		<div class="well">
+          <h5>Sign In</h5>
+		  <ul class="vmenu">
+			<%= render 'shared/navigation' %>
+		  </ul>
+		  <%- flash.each do |name, msg| -%>
+		    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+		  <%- end -%>	
+        </div>
+		
+        <div class="well">
+          <h5>Find By Media Type:</h5>
+           <ul class="vmenu">
+            <li>&raquo; <%= link_to 'Back To List', works_path(:mediatype => ["Movie", "Television"]) %>
+			<li>&raquo; <%= link_to 'Movies', works_path(:mediatype => "Movie") %>
+			<li>&raquo; <%= link_to 'Television', works_path(:mediatype => "Television") %>			
+          </ul>
+        </div>
+		
+		<div class="well">
+          <P>"Experiencing creative and fictional works about space is not only entertaining, 
+		  but opens your mind and senses to a universe of possibilities." 
+		  </P>
+		  <p class="pull-right"> - An Astute User</p>
+
+        </div>
+		
+      </div>
+
+	  
+      <div class="content">
+
+		  <a href="/home"><img alt="Spacefliks logo" src="/assets/sf_banner.jpg" /></a>	
+
+		
+
+		<%= yield %>
+				
+        <footer>
+          <p>&copy; 2011 Spacefliks </p>  
+        </footer>
+		
+      </div>
+    </div>
+
+
+
+
+  </body>
+</html>

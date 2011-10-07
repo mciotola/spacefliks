@@ -1,0 +1,39 @@
+<h1>Popular Works</h1>
+
+
+<table>
+  <tr>
+    <th></th>
+    <th>Title</th>
+    <th>Year</th>
+	<th>Type</th>
+	<th>Genre/Compendium</th>
+  </tr>
+
+<% @works.each do |work| %>
+  <tr>
+    <td>
+	  <% if !work.photo1.empty? %>
+	    <img src= <%= work.photo1 %> width="50" height="50">
+	  <% end %>
+	</td>
+	<td><b><%= work.title %></b><BR />&raquo; <%= link_to 'See More', work %></td>
+    <td><%= work.year %></td>
+	<td><%= work.mediatype %></td>
+	<td><%= work.genre %><BR /><%= work.punchline %></td>
+
+				  
+	<% if user_signed_in? %>
+	
+	<% else %>
+			
+	<% end %>
+	
+	
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

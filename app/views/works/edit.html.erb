@@ -1,0 +1,14 @@
+<h1>Editing And Administrative Page</h1>
+
+
+<b>Administrative Actions:</b>
+<%= link_to 'Edit', edit_work_path(@work) %> |
+<%= link_to 'Delete', @work, :confirm => 'Are you sure?', :method => :delete %> |
+<%= link_to 'Back', works_path %> |
+<%= link_to 'New Work', new_work_path %>
+
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @work %> |
+<%= link_to 'Back', works_path %>

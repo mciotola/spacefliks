@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+
+	  
+<b>Administrative Actions:</b>
+<%= link_to 'Edit', edit_work_path(@work) %> |
+<%= link_to 'Delete', @work, :confirm => 'Are you sure?', :method => :delete %> |
+<%= link_to 'Back', works_path %> |
+<%= link_to 'New Work', new_work_path %>
+</p>
+
+
+
+
+
+	  
+<p>
+  <b>Title:</b>
+  <%= @work.title %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @work.year %>
+</p>
+
+<p>
+  <b>Review:</b>
+  <%= @work.review %>
+</p>
+
+<p>
+  <b>Synopsis:</b>
+  <%= @work.synopsis %>
+</p>
+
+<p>
+  <b>Authors:</b>
+  <%= @work.authors %>
+</p>
+
+<p>
+  <b>Actors:</b>
+  <%= @work.actors %>
+</p>
+
+

@@ -1,0 +1,116 @@
+<p id="notice"><%= notice %></p>
+
+
+  <H1>
+  	<% if !@work.photo1.empty? %>
+	  <img src=<%= @work.photo1 %> width="100" height="100">
+	<% end %>
+  
+  
+  
+  
+  
+
+  <%= @work.title %> </H1>
+  
+    
+  
+
+  <HR>
+
+
+<table>
+<tr>
+<td> <b>Year: </b><%= @work.year %> 
+</td>
+<td><b>Type:</b> <%= @work.mediatype %>
+</td>
+<td><b>Genre:</b> <%= @work.genre %>
+</td>
+<td><%= link_to 'Back To List', works_path(:mediatype => ["Movie", "Television"]) %>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td><b>Creators: </b><%= @work.authors %> </td>
+</tr>
+<tr>
+<td> <b>Actors:</b><%= @work.actors %></td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td><b>Synopsis:</b><%= @work.synopsis %></td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td><b>Editor's Review: </b><%= @work.review %></td>
+</tr>
+</table>
+	<% if !@work.photo1.empty? %>
+	  <img src=<%= @work.photo1 %> width="235" height="200">
+	<% end %>
+	<% if !@work.photo2.empty? %>
+	  <img src=<%= @work.photo2 %> width="235" height="200">
+	<% end %>
+	<% if !@work.photo3.empty? %>
+	  <img src=<%= @work.photo3 %> width="235" height="200">
+	<% end %>
+
+
+<h2>User Reviews & Comments</h2>
+<HR>
+<% @work.comments.each do |comment| %>
+  <p>
+    <b>Review or Comments by: <%= comment.commenter %></b>
+  </p> 
+  <p>
+    <%= comment.body %>
+  </p>
+<% end %>
+<HR>
+
+
+
+
+
+	<% if user_signed_in? %>
+			
+			<h3>Add Your Own Review or Comment:</h3>
+	<%= form_for([@work, @work.comments.build]) do |f| %>
+	<div class="field">
+		<%= f.label :commenter %><br />
+		<%= f.text_field :commenter, :style => 'width:300px' %>
+	</div>
+	<div class="field">
+		<%= f.label :body %><br />
+		<%= f.text_area :body, :rows => 5, :style => 'width:500px' %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+	<% end %>
+			<% else %>
+			  <H3>Sign In to Make Comments.</H3>
+			<% end %>
+
+
+
+<BR />
+<%= link_to 'Back To List', works_path(:mediatype => ["Movie", "Television"]) %>
+
+
+
+
+
+
+
+
+
+
+

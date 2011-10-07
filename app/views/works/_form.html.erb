@@ -1,0 +1,71 @@
+<%= form_for(@work) do |f| %>
+  <% if @work.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@work.errors.count, "error") %> prohibited this work from being saved:</h2>
+
+      <ul>
+      <% @work.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, :style => 'width:300px' %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br />
+    <%= f.number_field :year, :style => 'width:100px' %>
+  </div>
+  <div class="field">
+    <%= f.label :review %><br />
+    <%= f.text_area :review, :rows => 5, :style => 'width:500px'%>
+  </div>
+  <div class="field">
+    <%= f.label :synopsis %><br />
+    <%= f.text_area :synopsis, :rows => 5, :style => 'width:500px' %>
+  </div>
+  <div class="field">
+    <%= f.label :authors %><br />
+    <%= f.text_area :authors, :rows => 1, :style => 'width:500px' %>
+  </div>
+  <div class="field">
+    <%= f.label :actors %><br />
+    <%= f.text_area :actors, :rows => 2, :style => 'width:500px' %>
+  </div>
+  <div class="field">
+    <%= f.label :photo1 %><br />
+    <%= f.text_field :photo1, :style => 'width:500px' %>
+  </div>
+  <div class="field">
+    <%= f.label :photo2 %><br />
+    <%= f.text_field :photo2, :style => 'width:500px' %>
+  </div>
+  <div class="field">
+    <%= f.label :photo3 %><br />
+    <%= f.text_field :photo3, :style => 'width:500px' %>
+  </div>
+  <div class="field">
+    <%= f.label :mediatype %><br />
+    <%= f.text_area :mediatype, :rows => 1, :style => 'width:200px' %>
+  </div>
+  <div class="field">
+    <%= f.label :genre %><br />
+    <%= f.text_area :genre, :rows => 1, :style => 'width:200px' %>
+  </div>
+    <div class="field">
+    <%= f.label :punchline %><br />
+    <%= f.text_field :punchline, :style => 'width:300px' %>
+  </div>
+  <div class="field">
+    <%= f.label :sources %><br />
+    <%= f.text_area :sources, :rows => 5, :style => 'width:500px' %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Save" %>
+  </div>
+  
+
+<% end %>

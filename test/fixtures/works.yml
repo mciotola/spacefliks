@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  year: 1
+  review: MyText
+  synopsis: MyText
+  authors: MyText
+  actors: MyText
+
+two:
+  title: MyString
+  year: 1
+  review: MyText
+  synopsis: MyText
+  authors: MyText
+  actors: MyText

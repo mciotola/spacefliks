@@ -1,0 +1,15 @@
+<h1>Search</h1>
+
+<%= form_for(@work) do |f| %>
+  
+<div class="field">
+ Search Titles:
+ <%= search_field :work, :title, :style => 'width:300px' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save" %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', works_path %>
