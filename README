@@ -1,0 +1,73 @@
+== Welcome to Alpha10
+
+	  Alpha10 is a simple web application to for a media review site. 
+	  It allows the editor to post a review and background information.
+	  Then registered users can provide their own reviews and comments.
+	  Alpha10 is written using Ruby on Rails.
+
+== Getting Started
+
+	  1. You will need to install these files on a computer that can run Linux or Unix.
+	  Installing then in the home directory works well for the author. Just copy over the
+	  whole directly.  The files and directories should not be rearranged but must be kept 
+	  in their original directories.  Directories and files should not be renamed unless 
+	  you are doing your own development and are familiar with Rails.
+
+	  2. Using your command line tool, you should install the required gems (Alpha10 
+	  software components written in Ruby) by going to the root directory for Alpha10 and type:
+
+	  bundle install
+
+	  3. Wait until bundle install is completed. It may take awhile.  Then set up the Alpha10 
+	  database by typing:
+
+	  rake db:migrate
+	  
+	  4. Activate the Rails server by typing:
+
+	  rails s
+
+	  5. Open your web browser and go to the following URL to locally see and use Alpha10:
+
+	  http://localhost:3000/ 
+
+	  and if prompted, use the following authentication values of
+
+	  User Name: alpha10
+
+	  Password: zxm130w
+
+	  6. Other users on your network might be able to see and use the application by using their
+	  browser to go to the URL for your computer (where Alpha10 is hosted) appended with ":3000"
+	  without the quotes. Whether this will work and for whom depends upon your network set-up.
+
+	  7. Alpha10 can be made available for users across the internet by using a publicly
+	  available server, but the set up for that is beyond this document. There are special companies
+	  that specialize in hosting Rails web applications that may work best for you.
+
+	  8. Alpha10 is only intended for use by a limited, trusted group of people. You will need to
+	  give them a username and password. For simplicity, everyone can share the same user name and 
+	  password. The default values are shown above. You can customize those values by editing line 3
+	  in each of the following files:
+
+	  posts_controller.rb
+	  comments_controller.rb
+
+	  Or you can remove these lines and add your own authentication system.
+
+== Instructions for Use
+
+	  To start, click on any media link.  Append /new to the URL and hit the return key.
+	  Enter your post.  For images, place the images in the /public/assets directory and 
+	  enter the links in the photo fields.  Discuss reviews using adding Comments.
+	  Deleting Reviews also deletes associated comments, so this should be avoided when possible.
+	  Reply to comments by creating additional comments.
+	  
+== About
+	  Alpha10 is written using Ruby 1.9.2 with Rails 3.1.0. It draws heavily from the Rails tutorial,
+	  but then branches off by experimenting with CSS and other interface elements.
+	  Developed by Mark Ciotola. See contact information at bottom of page.</P>
+	  
+== Copyright Notice</h2>
+	  <P> Alpha10 is subject to the GNU License.
+
